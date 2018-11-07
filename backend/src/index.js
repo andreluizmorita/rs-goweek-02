@@ -7,9 +7,17 @@ const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
-mongoose.connect('mongodb://goweek:goweek123@ds155293.mlab.com:55293/goweek-dia-02', {
-    useNewUrlParser: true
-});
+try {
+    mongoose.connect('mongodb://goweek:goweek123@ds155293.mlab.com:55293/goweek-dia-02', {
+        useNewUrlParser: true
+    }).then(() => {
+        console.log("Connected to Database");
+    }).catch((err) => {
+        console.log("Not Connected to Database ERROR! ", err);
+    });
+} catch (error) {
+    console.log(error);
+}
 
 app.use((req, res, next) => {
     req.io = io;
