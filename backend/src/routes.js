@@ -6,7 +6,7 @@ const TweetController = require('./controllers/TweetController');
 const LikeController = require('./controllers/LikeController');
 
 routes.get('/', (req, res) => {
-    return res.send('Hello World!');
+    return res.send('Hello World! BackEnd');
 });
 routes.get('/tweets', TweetController.index);
 routes.post('/tweets', TweetController.store);
