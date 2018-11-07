@@ -1,0 +1,12 @@
+{
+    "editor.tabSize": 2,
+    
+    "jshint.options": {
+      "esversion": 6
+    },
+    
+    "files.associations": {
+      "*.js": "javascriptreact",
+      "*.jsx": "javascriptreact"
+    }
+}
